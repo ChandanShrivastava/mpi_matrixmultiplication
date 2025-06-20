@@ -63,12 +63,14 @@ def parallel_multiply_matrices_mpi(matrix1, matrix2):
 
 if __name__ == "__main__":
     # Check if there are enough command-line arguments
-    if len(sys.argv) == 2:
+    if len(sys.argv) == 3:
         # The script name is sys.argv[0], so arguments start from index 1
-        matrix_a = sys.argv[1]
-        matrix_b = sys.argv[2]
+        #matrix_a = sys.argv[1]
+        #matrix_b = sys.argv[2]
+        matrix_a = np.load(sys.argv[1])
+        matrix_b = np.load(sys.argv[2])
         product = parallel_multiply_matrices_mpi(matrix_a, matrix_b)
         if MPI.COMM_WORLD.Get_rank() == 0 and product is not None:
-            print(product)
+            print(f"Rank: {MPI.COMM_WORLD.Get_rank()}, shape: {product.shape}")
     else:
         print("Usage: python3 script.py matrix_a matrix_b")

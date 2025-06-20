@@ -1,0 +1,15 @@
+[project]
+name = "mpi_matrixmultiplication"
+version = "0.1.0"
+description = "Matrix multiplication using MPI (Message Passing Interface) with Python"
+authors = ["Chandan Shrivastava <ch_sit@yahoo.co.in>"]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.8"
+
+[tool.setuptools]
+packages = ["src"]
+
+[project.dependencies]
+numpy = "*"
+mpi4py = "*"
