@@ -1,0 +1,1 @@
+The project contains code for matrix multiplication and demonstrates capability of MPI(Message passing interface)
